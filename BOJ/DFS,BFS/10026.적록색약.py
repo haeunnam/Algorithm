@@ -1,6 +1,6 @@
 import sys
 import copy
-sys.setrecursionlimit(10000000)
+sys.setrecursionlimit(1000000)
 
 
 def color_segment():

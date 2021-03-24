@@ -7,7 +7,7 @@ box = []
 for i in range(N):
     box.append(list(map(int, input().split())))
 
-# 익은 토마토들을 알아야해
+# 익은 토마토 구하기
 Q = deque()
 for i in range(N):
     for j in range(M):
