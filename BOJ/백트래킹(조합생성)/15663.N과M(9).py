@@ -27,4 +27,25 @@ for i in range(len(ans)):
         print(ans[i][j], end=" ")
     print()
 
+######## 다른 풀이법
 
+
+def f(idx):
+    if idx == m:
+        print(' '.join(ans))
+        return
+    t = 0
+    for j in range(n):
+        if check[j] or t == nums[j]:
+            continue
+        check[j] = 1
+        ans[idx] = nums[j]
+        f(idx+1)
+        check[j] = 0
+        t = ans[idx]
+
+n, m = map(int, input().split())
+nums = sys.stdin.readline().split()
+nums.sort(key=int)
+ans, check = [0]*m, [0]*n
+f(0)
