@@ -1,8 +1,3 @@
-# 알던 인접리스트 만들어서 인접리스트 len()이 가장 많은 애 찾아내면되는거아니야?
-# 안되네.. 왜나면 제일 멀리있는 친구가 얼마나 걸리는지 모르자나
-# 간선의 갯수를 계싼해야겠네 한명씩
-# import sys
-# sys.stdin = open('input.txt', 'r')
 
 from collections import deque
 
@@ -17,7 +12,6 @@ while True:
     graph[person1].append(person2)
     graph[person2].append(person1)
 
-#  최소 갯수, BFS
 
 def BFS(s, graph):
     global min_score, candidate
@@ -33,12 +27,15 @@ def BFS(s, graph):
                 Q.append(node)
         if len(Q) == 0:
             score = visited[v] - 1
+
             if min_score > score:
                 min_score = score
                 candidate = [s]
             elif min_score == score:
                 candidate.append(s)
 
+
+# 각 사람마다 점수 체크하기
 for start in range(1, N+1):
     BFS(start, graph)
 
