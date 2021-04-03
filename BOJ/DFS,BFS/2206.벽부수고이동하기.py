@@ -1,5 +1,3 @@
-import sys
-sys.stdin = open('input.txt', 'r')
 from collections import deque
 
 
@@ -18,6 +16,7 @@ def BFS():
         r, c, crash = Q.popleft()
         if r == N-1 and c == M-1:
             ans = visited[N-1][M-1][crash]
+            return ans
         for dt in range(4):
             nr = r + delta[dt][0]
             nc = c + delta[dt][1]
