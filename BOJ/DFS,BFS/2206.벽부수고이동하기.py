@@ -21,7 +21,7 @@ def BFS():
             nr = r + delta[dt][0]
             nc = c + delta[dt][1]
             if 0 <= nr < N and 0 <= nc < M:
-                # 벽이 없고 방문하지 않았을때
+                # 벽이 없고 방문하지 않았을 때
                 if map[nr][nc] == 0 and visited[nr][nc][crash] == 0 :
                     visited[nr][nc][crash] = visited[r][c][crash] + 1
                     Q.append((nr, nc, crash))
