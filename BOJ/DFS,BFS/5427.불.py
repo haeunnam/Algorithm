@@ -1,7 +1,6 @@
-import sys
 from collections import deque
 delta = [(1, 0), (-1, 0), (0, 1), (0, -1)]
-#
+
 
 #불퍼지기
 def fire():
