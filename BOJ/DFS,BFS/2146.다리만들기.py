@@ -1,3 +1,6 @@
+import sys
+sys.stdin = open('input.txt', 'r')
+
 
 from collections import deque
 delta = [(0, 1), (0, -1), (1, 0), (-1, 0)]
@@ -20,7 +23,7 @@ def start_point(i, j, island):
                 arr[nr][nc] = island
             # 시작점 좌표 정하기
             elif arr[nr][nc] == '0':
-                lst.add((r, c))
+                lst.add((nr, nc))
                 arr[r][c] = island
     starts.append(list(lst))
     return
@@ -30,10 +33,13 @@ def start_point(i, j, island):
 def bridge(island):
     global min_bridge
     visited = [[0] * N for i in range(N)]
+
+    # 자기 자신 섬 표시
     for i in range(N):
         for j in range(N):
             if arr[i][j] == island+1:
                 visited[i][j] = arr[i][j]
+
     cnt = 0
     Q = deque()
     Q.extend(starts[island])
@@ -53,9 +59,8 @@ def bridge(island):
                     visited[nr][nc] = -1
                     Q.append((nr, nc))
                 elif arr[nr][nc]: #  다른 섬에 도달하면
-                    if min_bridge > cnt:
-                        min_bridge = cnt
-                        return
+                    min_bridge = cnt
+                    return
     return
 
 
@@ -74,5 +79,4 @@ for i in range(N):
 for i in range(island-1):
     bridge(i)
 
-print(min_bridge-1)
-
+print(min_bridge)
