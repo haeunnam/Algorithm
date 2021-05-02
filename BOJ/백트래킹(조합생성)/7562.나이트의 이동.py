@@ -1,5 +1,3 @@
-
-
 dr = [-2, -1, 1, 2, 2, 1, -1, -2]
 dc = [1, 2, 2, 1, -1, -2, -2, -1]
 
@@ -12,7 +10,6 @@ def go(sr, sc):
         size = len(Q)
         for i in range(size):
             r, c = Q.popleft()
-            if r >= N or c >= N: continue
             if r == er and c == ec:
                 print(moved)
                 return
@@ -23,7 +20,7 @@ def go(sr, sc):
                 visited[nr][nc] = 1
                 Q.append((nr, nc))
         moved += 1
-    return moved
+    return
 
 # 몇번만에 도착하는지
 for tc in range(1, int(input())+1):
