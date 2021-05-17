@@ -1,6 +1,6 @@
 import sys
 sys.stdin = open('input.txt', 'r')
-# https://www.acmicpc.net/board/view/54133 반례들
+# DFS
 def check_areas(check):
     for i in range(1, N+1):
         if check[i] == 0:
@@ -20,6 +20,7 @@ def check_areas(check):
     return True
 
 
+# 두개의 구역 나누기
 def make_two_areas(lst):
     area1_visited = lst[:]
     area2_visited = [int(not i) for i in area1_visited] # 다른 선거지역
@@ -66,4 +67,3 @@ if total == ans:
     print(-1)
 else:
     print(ans)
-
