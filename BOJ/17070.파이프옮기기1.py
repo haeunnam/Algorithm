@@ -28,3 +28,4 @@ cnt = 0
 find_cases(0, 1, 0)
 print(cnt)
 
+# 재귀 오래걸리면 스택으로 풀기
