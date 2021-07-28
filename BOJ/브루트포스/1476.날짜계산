@@ -1,0 +1,34 @@
+# 나누는 수가 가장 큰 28을 기준으로
+# 28로 나눴을떄 나머지가 x인 수를 찾아서 3곳에 다 비교
+# 28로 가능한 수 찾는거 1개, 이걸로 3개 대입해보는 함수 1개
+
+
+def find_years(a, b, c):
+    cnt = 0
+    while True:
+        candidate = 28 * cnt + b
+        rest_a = candidate % 15
+        rest_c = candidate % 19
+        if a == 15:
+            if rest_a != 0:
+                cnt += 1
+                continue
+        else:
+            if rest_a != a:
+                cnt += 1
+                continue
+
+        if c == 19:
+            if rest_c != 0:
+                cnt += 1
+                continue
+        else:
+            if rest_c != c:
+                cnt += 1
+                continue
+
+        return candidate
+
+a, b, c = map(int, input().split())
+print(find_years(a, b, c))
+
