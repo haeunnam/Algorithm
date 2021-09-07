@@ -18,8 +18,5 @@ def solution(record):
     for j in range(len(chatInfo)):
         message, userId = chatInfo[j][0], userInfo[chatInfo[j][1]]
         answer.append(userId+message)
-    print(answer)
     return answer
 
-
-solution(["Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"])

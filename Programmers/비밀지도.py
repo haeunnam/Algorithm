@@ -1,9 +1,9 @@
 def solution(n, arr1, arr2):
     def binary_change(num, binary):
         while num >= 2:
-            binary =  str(num % 2) + binary
+            binary = str(num % 2) + binary
             num = num//2
-        binary =  str(num) +binary
+        binary = str(num) +binary
         return binary
 
     # arr 1이랑 arr2 이진수로 바꾸기
@@ -30,7 +30,6 @@ def solution(n, arr1, arr2):
             else:
                 tmp += " "
         total_map.append(tmp)
-    print(total_map)
 
     return total_map
 
